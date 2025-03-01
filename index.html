@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLabs Teacher Bot</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .chat-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            overflow-y: auto;
+            height: 400px;
+        }
+
+        .chat-message {
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .chat-message.user {
+            background-color: #d1e7dd;
+            text-align: right;
+        }
+
+        .chat-message.bot {
+            background-color: #f8d7da;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>📚 OLabs Teacher Bot</h1>
+
+        <!-- Login Form -->
+        <div id="login-section">
+            <h2>🔑 Login</h2>
+            <input type="text" id="login-username" placeholder="Username">
+            <input type="password" id="login-password" placeholder="Password">
+            <input type="date" id="login-dob">
+            <button onclick="login()">Login</button>
+            <p id="login-message"></p>
+            <p>New user? <a href="#" onclick="showRegister()">Register here</a></p>
+        </div>
+
+        <!-- Register Form -->
+        <div id="register-section" style="display: none;">
+            <h2>📝 Register</h2>
+            <input type="text" id="reg-username" placeholder="Username">
+            <input type="password" id="reg-password" placeholder="Password">
+            <input type="date" id="reg-dob">
+            <select id="reg-role">
+                <option value="Student">Student</option>
+                <option value="Parent">Parent</option>
+                <option value="Teacher">Teacher</option>
+            </select>
+            <input type="text" id="reg-linked-student" placeholder="Linked Student (for Parents/Teachers)">
+            <button onclick="register()">Register</button>
+            <p id="register-message"></p>
+            <p>Already registered? <a href="#" onclick="showLogin()">Login here</a></p>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard" style="display: none;">
+            <h2>👋 Welcome, <span id="user-role"></span></h2>
+            <button onclick="viewProgress()">📊 View Progress</button>
+            <button onclick="showChat()">💬 Chat with Chatbot</button>
+            <button onclick="logout()">🚪 Logout</button>
+        </div>
+
+        <!-- Chatbot -->
+        <div id="chatbot-section" style="display: none;">
+            <h3>🤖 Ask the Chatbot</h3>
+            <div class="chat-container" id="chatbot-response"></div>
+            <input type="text" id="chat-question" placeholder="Ask a question...">
+            <button onclick="askChatbot()">Ask</button>
+        </div>
+
+        <!-- Progress Display -->
+        <div id="progress-section" style="display: none;">
+            <h3>📈 Student Progress</h3>
+            <pre id="progress-data"></pre>
+        </div>
+
+    </div>
+    <!-- Link to External JavaScript -->
+    <script src="jvs.js"></script>
+</body>
+</html>

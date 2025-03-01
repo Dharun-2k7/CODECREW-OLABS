@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #093baf;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background: rgb(182, 42, 94);
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 10px;
+}
+
+input, select, button {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#dashboard, #chatbot-section, #progress-section {
+    margin-top: 20px;
+}
